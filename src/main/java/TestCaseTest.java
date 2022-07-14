@@ -5,8 +5,8 @@ public class TestCaseTest extends TestCase{
 
     public void testRunning() {
         WasRun test = new WasRun("testMethod");
-        System.out.println("test.wasRun() = " + test.wasRun);
+        Assert.assertEquals(test.wasRun, false);
         test.run();
-        System.out.println("test.wasRun() = " + test.wasRun);
+        Assert.assertEquals(test.wasRun, false);
     }
 }
