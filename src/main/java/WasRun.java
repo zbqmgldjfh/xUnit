@@ -1,19 +1,17 @@
 public class WasRun extends TestCase {
 
-    public boolean wasRun;
-    public boolean wasSetUp;
-
-    @Override
-    public void setUp() {
-        wasSetUp = true;
-    }
+    public String log;
 
     public WasRun(String name) {
         super(name);
     }
 
-    public void testMethod() {
-        this.wasRun = true;
+    @Override
+    public void setUp() {
+        log = "setUp";
     }
 
+    public void testMethod() {
+        log += " testMethod";
+    }
 }
