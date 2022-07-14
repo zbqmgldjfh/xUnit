@@ -9,6 +9,13 @@ public abstract class TestCase {
     }
 
     public void run() {
+        setUp();
+        runTestCase();
+    }
+
+    public void setUp() {};
+
+    private void runTestCase() {
         try {
             Method method = getClass().getMethod(name);
             method.invoke(this);
