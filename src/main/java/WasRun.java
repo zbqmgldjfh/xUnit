@@ -15,6 +15,10 @@ public class WasRun extends TestCase {
         log += " testMethod";
     }
 
+    public void testFailedMethod() {
+        throw new AssertionError();
+    }
+
     @Override
     public void tearDown() {
         log += " tearDown";

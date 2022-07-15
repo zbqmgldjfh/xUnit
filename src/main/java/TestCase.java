@@ -12,19 +12,19 @@ public abstract class TestCase {
         TestResult testResult = new TestResult();
         testResult.testStarted();
         setUp();
-        runTestCase();
+        runTestCase(testResult);
         tearDown();
         return testResult;
     }
 
     public void setUp() {}
 
-    private void runTestCase() {
+    private void runTestCase(TestResult testResult) {
         try {
             Method method = getClass().getMethod(name);
             method.invoke(this);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            testResult.testFailed();
         }
     }
 

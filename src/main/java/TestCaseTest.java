@@ -15,4 +15,17 @@ public class TestCaseTest extends TestCase{
         TestResult testResult = test.run();
         Assert.assertEquals(testResult.getSummary(), "1 run, 0 failed");
     }
+
+    public void testFailedResultFormatting() {
+        TestResult testResult = new TestResult();
+        testResult.testStarted();
+        testResult.testFailed();
+        Assert.assertEquals(testResult.getSummary(), "1 run, 1 failed");
+    }
+
+    public void testFailedResult() {
+        WasRun test = new WasRun("testFailedMethod");
+        TestResult testResult = test.run();
+        Assert.assertEquals(testResult.getSummary(), "1 run, 1 failed");
+    }
 }
