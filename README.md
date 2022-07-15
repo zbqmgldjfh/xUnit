@@ -1,6 +1,10 @@
 # xUnit를 TDD로 만들기 in Java
 켄트백의 테스트 주도 개발의 2부 xUnit 예시 코드를 자바로 구현하였습니다.
 
+## 만든 과정을 직접 정리한 글
+[JUnit만들기 1부](https://blogshine.tistory.com/469)    
+[JUnit만들기 2부](https://blogshine.tistory.com/470)
+
 ## Reference
 [JUnit: A Cook's Tour](https://jojoldu.tistory.com/231)  
 [향로님 글](https://jojoldu.tistory.com/231)
