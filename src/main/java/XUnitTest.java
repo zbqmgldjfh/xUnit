@@ -4,6 +4,12 @@ public class XUnitTest {
         TestSuite testSuite = TestCaseTest.suite();
         TestResult testResult = new TestResult();
         testSuite.run(testResult);
-        System.out.println("[TEST RESULT] = " + testResult.getSummary());
+
+        TestSuite testSuiteCollection = new TestSuite();
+        testSuiteCollection.add(new TestCaseTest("testTemplateMethod"));
+        testSuiteCollection.add(testSuite);
+        TestResult testResult2 = new TestResult();
+        testSuiteCollection.run(testResult2);
+        System.out.println("[TEST RESULT] = " + testResult2.getSummary());
     }
 }

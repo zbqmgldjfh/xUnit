@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestSuite {
+public class TestSuite implements Test{
 
-    private List<TestCase> tests = new ArrayList<>();
+    private List<Test> tests = new ArrayList<>();
 
-    public void add(TestCase test) {
+    public void add(Test test) {
         tests.add(test);
     }
 
