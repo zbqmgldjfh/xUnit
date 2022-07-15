@@ -1,12 +1,15 @@
 public class XUnitTest {
 
     public static void main(String[] args) {
+        TestSuite testSuite = new TestSuite();
+        testSuite.add(new TestCaseTest("testTemplateMethod"));
+        testSuite.add(new TestCaseTest("testResult"));
+        testSuite.add(new TestCaseTest("testFailedResultFormatting"));
+        testSuite.add(new TestCaseTest("testFailedResult"));
+        testSuite.add(new TestCaseTest("testSuite"));
+
         TestResult testResult = new TestResult();
-        new TestCaseTest("testTemplateMethod").run(testResult);
-        new TestCaseTest("testResult").run(testResult);
-        new TestCaseTest("testFailedResultFormatting").run(testResult);
-        new TestCaseTest("testFailedResult").run(testResult);
-        new TestCaseTest("testSuite").run(testResult);
+        testSuite.run(testResult);
         System.out.println("[TEST RESULT] = " + testResult.getSummary());
     }
 }

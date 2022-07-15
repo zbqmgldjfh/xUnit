@@ -3,9 +3,9 @@ import java.util.List;
 
 public class TestSuite {
 
-    private List<WasRun> tests = new ArrayList<>();
+    private List<TestCase> tests = new ArrayList<>();
 
-    public void add(WasRun test) {
+    public void add(TestCase test) {
         tests.add(test);
     }
 
