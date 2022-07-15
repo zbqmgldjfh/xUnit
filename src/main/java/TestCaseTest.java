@@ -5,13 +5,7 @@ public class TestCaseTest extends TestCase {
     }
 
     public static TestSuite suite() {
-        TestSuite testSuite = new TestSuite();
-        testSuite.add(new TestCaseTest("testTemplateMethod"));
-        testSuite.add(new TestCaseTest("testResult"));
-        testSuite.add(new TestCaseTest("testFailedResultFormatting"));
-        testSuite.add(new TestCaseTest("testFailedResult"));
-        testSuite.add(new TestCaseTest("testSuite"));
-        return testSuite;
+        return new TestSuite(TestCaseTest.class);
     }
 
     public void testTemplateMethod() {
@@ -51,3 +45,9 @@ public class TestCaseTest extends TestCase {
         Assert.assertEquals(testResult.getSummary(), "2 run, 1 failed");
     }
 }
+//
+//        testSuite.add(new TestCaseTest("testTemplateMethod"));
+//                testSuite.add(new TestCaseTest("testResult"));
+//                testSuite.add(new TestCaseTest("testFailedResultFormatting"));
+//                testSuite.add(new TestCaseTest("testFailedResult"));
+//                testSuite.add(new TestCaseTest("testSuite"));
