@@ -11,9 +11,10 @@ public abstract class TestCase {
     public void run() {
         setUp();
         runTestCase();
+        tearDown();
     }
 
-    public void setUp() {};
+    public void setUp() {}
 
     private void runTestCase() {
         try {
@@ -23,4 +24,6 @@ public abstract class TestCase {
             throw new RuntimeException(e);
         }
     }
+
+    public void tearDown() {}
 }
