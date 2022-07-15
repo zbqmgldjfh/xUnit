@@ -9,4 +9,10 @@ public class TestCaseTest extends TestCase{
         test.run();
         Assert.assertEquals(test.log, "setUp testMethod tearDown");
     }
+
+    public void testResult() {
+        WasRun test = new WasRun("testMethod");
+        TestResult testResult = test.run();
+        Assert.assertEquals(testResult.getSummary(), "1 run, 0 failed");
+    }
 }

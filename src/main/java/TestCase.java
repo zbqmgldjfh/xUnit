@@ -8,10 +8,13 @@ public abstract class TestCase {
         this.name = name;
     }
 
-    public void run() {
+    public TestResult run() {
+        TestResult testResult = new TestResult();
+        testResult.testStarted();
         setUp();
         runTestCase();
         tearDown();
+        return testResult;
     }
 
     public void setUp() {}
