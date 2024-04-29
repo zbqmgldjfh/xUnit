@@ -1,3 +1,5 @@
+import annotation.Test;
+
 public class TestCaseTest extends TestCase {
 
     public TestCaseTest(String name) {
@@ -8,6 +10,7 @@ public class TestCaseTest extends TestCase {
         return new TestSuite(TestCaseTest.class);
     }
 
+    @Test
     public void testTemplateMethod() {
         WasRun test = new WasRun("testMethod");
         TestResult testResult = new TestResult();
@@ -15,6 +18,7 @@ public class TestCaseTest extends TestCase {
         Assert.assertEquals(test.log, "setUp testMethod tearDown");
     }
 
+    @Test
     public void testResult() {
         WasRun test = new WasRun("testMethod");
         TestResult testResult = new TestResult();
@@ -22,6 +26,7 @@ public class TestCaseTest extends TestCase {
         Assert.assertEquals(testResult.getSummary(), "1 run, 0 failed");
     }
 
+    @Test
     public void testFailedResultFormatting() {
         TestResult testResult = new TestResult();
         testResult.testStarted();
@@ -29,6 +34,7 @@ public class TestCaseTest extends TestCase {
         Assert.assertEquals(testResult.getSummary(), "1 run, 1 failed");
     }
 
+    @Test
     public void testFailedResult() {
         WasRun test = new WasRun("testFailedMethod");
         TestResult testResult = new TestResult();
@@ -36,6 +42,7 @@ public class TestCaseTest extends TestCase {
         Assert.assertEquals(testResult.getSummary(), "1 run, 1 failed");
     }
 
+    @Test
     public void testSuite() {
         TestSuite testSuite = new TestSuite();
         testSuite.add(new WasRun("testMethod"));
@@ -45,9 +52,3 @@ public class TestCaseTest extends TestCase {
         Assert.assertEquals(testResult.getSummary(), "2 run, 1 failed");
     }
 }
-//
-//        testSuite.add(new TestCaseTest("testTemplateMethod"));
-//                testSuite.add(new TestCaseTest("testResult"));
-//                testSuite.add(new TestCaseTest("testFailedResultFormatting"));
-//                testSuite.add(new TestCaseTest("testFailedResult"));
-//                testSuite.add(new TestCaseTest("testSuite"));
